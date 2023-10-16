@@ -1,0 +1,1 @@
+// Her kommer kontrollfunksjonalitet til oppskriftssiden. Det inkluderer hva som skjer når man trykker på knappen, og hva som skjer når man endrer antall porsjoner. 
