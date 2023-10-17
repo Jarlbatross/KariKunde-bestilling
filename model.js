@@ -9,7 +9,6 @@ const model = {
             listView: false,
             searchField: '', 
         },
-        // skal searchField være i model? 
         
         addRecipePage: {
             id: null, 
