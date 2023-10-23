@@ -7,31 +7,38 @@ function updateRecipePageView() {
     <button>Rediger</button>
     <button>Slett</button>
     <h1>${model.data.recipes.title}</h1>
-    <img>
+    <img src=${model.data.recipes.image}><br>
+    
     
     
     <input
     type="number"
     placeholder="Porsjonantall"
     onchange=>
-    
-    <div>${createIngredientHTML()}</div>
-    <div>Fremgangsmåte</div>
+    <div>Beregnet tid</div>
+    <div>Vanskelighetsgrad</div>
+    <div>${createIngredientHTML()}</div><br>
+    <ul>${createInstructionHTML()}</ul>
     `;
 };
 
 
 function createIngredientHTML() {
-    let html;
+    let html = '';
     for (let i = 0; i < model.data.recipes.ingredient.length; i++){
         html += /*html*/`
             <ul>${model.data.recipes.ingredientCount[i]}${model.data.recipes.ingredientUnit[i]} ${model.data.recipes.ingredient[i]}</ul>
-        `
+        ` 
     }
     return html;
 }
 
-
-
-
-    
+function createInstructionHTML() {
+    let html = '';
+    for (let i = 0; i < model.data.recipes.instruction.length; i++){
+        html += /*html*/`
+            <li>${model.data.recipes.instruction[i]}</li>
+        `
+    }
+    return html;
+}

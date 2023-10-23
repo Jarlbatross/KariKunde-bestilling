@@ -12,6 +12,10 @@ function gotoFrontpageView(){
     updateView();
 }
 
+function deleteRecipe() {
+    
+}
+
 // funksjon til å endre ingredient mengde
 function adjustIngredients(){
 

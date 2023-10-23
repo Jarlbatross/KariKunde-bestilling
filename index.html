@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oppskrift-app</title>
-    <style></style>
+    <link rel="stylesheet" href="style.css" />
 
     <script src="model.js"></script>
 
@@ -28,11 +28,13 @@
 
     <script>
       // view
-      model.app.pages = 'recipePage';
+      model.app.pages = 'sortPage';
       updateView();
       function updateView() {
         if (model.app.pages == 'frontPage') updateFrontPageListView();
-        // else if (model.app.pages == 'sortPage') updateSortPageView();
+        else if (model.app.pages == 'frontpage+') updatefrontpageImgView();
+        else if (model.app.pages == 'addRecipe') updateAddRecipeView();
+        else if (model.app.pages == 'sortPage') updateSortPageView();
         else if (model.app.pages == 'recipePage') updateRecipePageView();
         // else updateFrontPageView();
       }
