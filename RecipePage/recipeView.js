@@ -6,16 +6,33 @@ function updateRecipePageView() {
     <button onclick="gotoFrontpageView()">Tilbake</button>
     <button>Rediger</button>
     <button>Slett</button>
-    <h1>Overskrift</h1>
+    <h1>${model.data.recipes.title}</h1>
     <img>
+    
     
     <input
     type="number"
+    placeholder="Porsjonantall"
     onchange=>
     
-    <div>Ingrediens-liste</div>
+    <div>${createIngredientHTML()}</div>
+  
     <div>Fremgangsmåte</div>
     `;
 };
 
 
+function createIngredientHTML() {
+    let html;
+    for (let i = 0; i < model.data.recipes.ingredient.length; i++){
+        html += /*html*/`
+            <ul>${model.data.recipes.ingredient}</ul>
+        `
+    }
+    return html;
+}
+
+
+
+
+    

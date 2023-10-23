@@ -46,21 +46,21 @@ const model = {
     // data
     data: {
 
-    recipes: [
+    recipes: 
             {
             id: 201, 
-            title: 'taco',
+            title: 'Taco',
             image: 'img=src',
             difficulty: [1],
             timeSpent: [0],
             instruction: ['Kutt grønnsaker i båter', 'stek kjøttdeig'],
             instructionImg: ['bilde av kuttet grønnsak.png'],
-            ingredient: ['løk', 'kjøttdeig'],
+            ingredient: ['løk','mel','melk',],
             ingredientCount: [2, 400],
             portionCount: 2,
             
         },
-        ]
+        
     }
 }
 
