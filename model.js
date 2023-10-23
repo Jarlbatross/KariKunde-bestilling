@@ -55,8 +55,9 @@ const model = {
             timeSpent: [0],
             instruction: ['Kutt grønnsaker i båter', 'stek kjøttdeig'],
             instructionImg: ['bilde av kuttet grønnsak.png'],
-            ingredient: ['løk','mel','melk',],
-            ingredientCount: [2, 400],
+            ingredient: ['løk','mel','vann',],
+            ingredientCount: [2, 400, 0.8],
+            ingredientUnit: ['stk', 'g', 'l'],
             portionCount: 2,
             
         },

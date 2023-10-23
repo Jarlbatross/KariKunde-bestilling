@@ -16,7 +16,6 @@ function updateRecipePageView() {
     onchange=>
     
     <div>${createIngredientHTML()}</div>
-  
     <div>Fremgangsmåte</div>
     `;
 };
@@ -26,7 +25,7 @@ function createIngredientHTML() {
     let html;
     for (let i = 0; i < model.data.recipes.ingredient.length; i++){
         html += /*html*/`
-            <ul>${model.data.recipes.ingredient}</ul>
+            <ul>${model.data.recipes.ingredientCount[i]}${model.data.recipes.ingredientUnit[i]} ${model.data.recipes.ingredient[i]}</ul>
         `
     }
     return html;
