@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <script src="model.js"></script>
+    <script src="Universal/universal.js"></script>
 
     <script src="addRecipe/addRecipeController.js"></script>
     <script src="addRecipe/addRecipeView.js"></script>
@@ -27,12 +28,12 @@
     <div id="app"></div>
 
     <script>
-      // view
-      model.app.pages = 'sortPage';
+      // View
+      model.app.pages = 'recipePage';
       updateView();
       function updateView() {
         if (model.app.pages == 'frontPage') updateFrontPageListView();
-        else if (model.app.pages == 'frontpage+') updatefrontpageImgView();
+        else if (model.app.pages == 'frontpage+') updateFrontPageImgView();
         else if (model.app.pages == 'addRecipe') updateAddRecipeView();
         else if (model.app.pages == 'sortPage') updateSortPageView();
         else if (model.app.pages == 'recipePage') updateRecipePageView();

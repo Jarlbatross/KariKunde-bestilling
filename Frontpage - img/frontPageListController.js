@@ -12,6 +12,10 @@ function goToRecipePage(){
     updateView();
 }
 
-// Søkefelt som lenkær til spesifikke oppskriftær
 
+ // Søkefelt som lenkær til spesifikke oppskriftær
+
+function displayRecipes(){
+
+}
 

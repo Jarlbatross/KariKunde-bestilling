@@ -25,7 +25,7 @@ const model = {
 
         recipePage: {
             portionCount: null,
-            recipeID: 201,
+            recipeID: 202,
         },
 
         sortPage: {
@@ -45,7 +45,7 @@ const model = {
     },
     // data
     data: {
-        recipes: //[
+        recipes: [
             {
                 id: 201,
                 title: 'Taco',
@@ -59,10 +59,10 @@ const model = {
                 ingredientUnit: ['stk', 'g', 'l'],
                 portionCount: 2,
             },
-          /*  {
+            {
                 id: 202,
                 title: 'Pasta Carbonara',
-                image: 'img/pasta.jpg',
+                image: 'img/placeholder.png',
                 difficulty: [2],
                 timeSpent: [2],
                 instruction: ['Kok pasta', 'Stek bacon og hvitløk', 'Bland egg og ost'],
@@ -71,8 +71,8 @@ const model = {
                 ingredientCount: [200, 100, 2, 50],
                 ingredientUnit: ['g', 'g', 'stk', 'g'],
                 portionCount: 4,
-            },*/
-        //]
+            },
+        ]
     },
 };
 
