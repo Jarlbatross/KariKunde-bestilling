@@ -41,6 +41,6 @@ function updateSortPageView() {
      <br>
 
 
-     <button class="sortButton">Sorter</button>
+     <button class="sortButton" onclick="gotoFrontpageView()">Sorter</button>
        `;
 }

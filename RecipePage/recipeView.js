@@ -1,13 +1,13 @@
 // Her er viewet til oppskriftsiden. Her kommer alt som skal fremvises grafisk av oppskriften. Overskrift, bilde, fremgangsmåte, ingredienser og porsjoner.
 // Trenger også knapper for slett oppskrift, rediger oppskrift og tilbake til hovedsiden;
 
-function updateRecipePageView() {
-    const id = model.input.recipePage.recipeID;
-    let recipe = getRecipeById(id)
+function updateRecipePageView(recipeId) {
+    model.input.recipePage.recipeID = recipeId
+    let recipe = getRecipeById(recipeId)
 
     document.getElementById('app').innerHTML = /*html*/ `
     <button onclick="gotoFrontpageView()">Tilbake</button>
-    <button>Rediger</button>
+    <button onclick="updateAddRecipeView()">Rediger</button>
     <button>Slett</button>
     <h1>${recipe.title}</h1>
     <img src= ${recipe.image}><br>
@@ -15,15 +15,17 @@ function updateRecipePageView() {
     
     
     <input
+    id="portionInput"
     type="number"
-    placeholder=${recipe.portionCount}
-    onchange=>
+    value=${recipe.portionCount}
+    onchange=>${adjustIngredients(recipeId)}
+    >
 
     
     <div>${recipe.timeSpent}</div>
     <div>${recipe.difficulty}</div>
-    <div>${createIngredientHTML()}</div><br>
-    <ul>${createInstructionHTML()}</ul>
+    <div>${createIngredientHTML(recipeId)}</div><br>
+    <ul>${createInstructionHTML(recipeId)}</ul>
     `;
 };
 
@@ -51,4 +53,5 @@ function createInstructionHTML() {
     }
     return html;
 }
+
 

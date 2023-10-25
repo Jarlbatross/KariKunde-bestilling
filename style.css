@@ -30,13 +30,13 @@ h3 {
   width: 350px;
 }
 .Easy {
-  border: solid 1px yellowgreen;
+  border: solid 1px rgb(195, 247, 92);
   background-color: yellowgreen;
   font-size: x-large;
 }
 
 .Average {
-  background-color: orange;
+  background-color: rgb(238, 204, 140);
   font-size: x-large;
 }
 
@@ -61,14 +61,67 @@ h3 {
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.turnonImg{
-    height: 30px;
+.turnonImg {
+  height: 30px;
+  position: absolute;
+  top: 70px;
+  left: 1px;
 }
 
 .scrollbar {
-	width: 8px;
-	height: 350px;
+  width: 8px;
+  height: 350px;
   border: solid 1px black;
-	border-radius: 12px;
+  border-radius: 12px;
   overflow: visible;
+  position: absolute;
+  left: 350px;
+  top: 100px;
+}
+
+.sortingPageButton {
+  height: 30px;
+  border: solid 1px black;
+  border-radius: 12px;
+  background-color: transparent;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 70px;
+    left: 270px;
+}
+
+.searchBar {
+  border: solid 1px black;
+  border-radius: 12px;
+  background-color: transparent;
+  position: absolute;
+  top: 5px;
+  left: 130px;
+  height: 20px;
+  width: 105px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.addButton{
+  height: 30px;
+  border: solid 1px black;
+  border-radius: 100%;
+  background-color: transparent;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 5px;
+    left: 290px;
+}
+
+.recipeButtons{
+  position: relative;
+  top: 130px;
+  padding: 5px;
+  margin-left: 30px;
+  margin-top: 25px;
+  width: 120px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
