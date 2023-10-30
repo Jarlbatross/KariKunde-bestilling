@@ -1,11 +1,11 @@
 function updateFrontPageImgView (){
     document.getElementById('app').innerHTML = /*html*/ `
-    <input placeholder="søk">
-    <button onclick="updateAddRecipeView()">+</button>
+    <input class="searchBar" placeholder="søk">
+    <button  class="addButton" onclick="updateAddRecipeView()">+</button>
     <img class="turnonImg" onclick="updateFrontPageListView()" src="img/av_knapp.jpg"> 
-    <button onclick="gotoSortPageView()">Sortering</button>
+    <button class="sortingPageButton" onclick="gotoSortPageView()">Sortering</button>
 
-    <div>${createCardMenuHTML()}</div>
+    <div class="CreateCardMenuHTML">${createCardMenuHTML()}</div>
     <div class="scrollbar"></div>
     `;
 }
@@ -24,12 +24,16 @@ function createCardMenuHTML(){
             buttonColor = " rgb(218, 15, 15)";
         }
 
-        html += /*HTML*/ `<button onclick="updateRecipePageView(${model.data.recipes[i].id})" style="background-color:${buttonColor}" >${model.data.recipes[i].title}</button>
-                  <img src="${model.data.recipes[i].image}">
+        html += /*HTML*/ ` 
+        <div class="createButtonMenu">
+        <img class="IMGSize" src="${model.data.recipes[i].image}">
+        <button onclick="updateRecipePageView(${model.data.recipes[i].id})" style="background-color:${buttonColor}; cursor: pointer;" >${model.data.recipes[i].title}</button>
+       </div>
         `;
-        if(i % 2 !== 0){
-            html += '<br>';
-        }
+
     }
     return html;
 }
+
+
+

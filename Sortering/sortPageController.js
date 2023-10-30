@@ -3,7 +3,7 @@
 
 
 
-function checked (){
+function checked() {
     document.getElementById('Egg').checked = true;
     document.getElementById('Milk').checked = true;
     document.getElementById('Flour').checked = true;
@@ -23,7 +23,7 @@ function checked (){
     document.getElementById('Average').checked = true;
     document.getElementById('Difficult').checked = true;
 }
-function unchecked (){
+function unchecked() {
     document.getElementById('Egg').checked = false;
     document.getElementById('Milk').checked = false;
     document.getElementById('Flour').checked = false;

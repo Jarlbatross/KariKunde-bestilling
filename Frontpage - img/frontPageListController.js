@@ -4,7 +4,8 @@ function gotoSortPageView(){
 } 
 
 function gotoFrontpageWithImg(){
-    model.app.pages = 'frontpage+'
+    model.app.pages = 'frontpage+';
+    updateView();
 }
 
 function goToRecipePage(){
@@ -13,9 +14,8 @@ function goToRecipePage(){
 }
 
 
- // Søkefelt som lenkær til spesifikke oppskriftær
+ // Søkefelt som lenker til spesifikke oppskrifter
 
 function displayRecipes(){
 
 }
-

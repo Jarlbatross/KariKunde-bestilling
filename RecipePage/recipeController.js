@@ -17,7 +17,7 @@ function deleteRecipe() {
 }
 
 
- funksjon til å endre ingredient mengde
+// funksjon til å endre ingredient mengde
 function adjustIngredients() {
     const id = model.input.recipePage.recipeID;
     let recipe = getRecipeById(id);

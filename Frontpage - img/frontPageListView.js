@@ -1,7 +1,7 @@
 function updateFrontPageListView() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <button onclick="updateAddRecipeView()" class="addButton">+</button>
-    <input placeholder="Søk etter oppskrift" class="searchBar">
+    <input placeholder="søk" class="searchBar">
     <img class="turnonImg" onclick="updateFrontPageImgView()" src="img/Turn_on.jpg">
     <button onclick="gotoSortPageView()" class="sortingPageButton">Sortering</button>
 

@@ -11,7 +11,7 @@ h3 {
 }
 
 .IngredientsContainer {
-  border: solid white;
+  border: none;
   height: auto;
   width: 350px;
   display: grid;
@@ -19,40 +19,37 @@ h3 {
 }
 
 .TimeContainer {
-  border: solid white;
+  border: none;
   height: auto;
   width: 350px;
 }
 
 .DifficultyContainer {
-  border: solid white;
-  height: auto;
-  width: 350px;
+  border: none;
+  width: 100px;
+
 }
+
 .Easy {
-  border: solid 1px rgb(195, 247, 92);
-  background-color: yellowgreen;
-  font-size: x-large;
+  background-color: rgb(195, 247, 92);
 }
 
 .Average {
-  background-color: rgb(238, 204, 140);
-  font-size: x-large;
+  background-color: rgb(247, 202, 4);
 }
 
 .Difficult {
-  border: solid 1px rgb(218, 15, 15);
   background-color: rgb(218, 15, 15);
-  color: rgb(218, 15, 15);
-  font-size: x-large;
 }
+
 .sortButton {
   height: auto;
   border: none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  width: 350px;
+  width: 360px;
 }
+
 .backButton {
   height: auto;
   border: none;
@@ -70,12 +67,12 @@ h3 {
 
 .scrollbar {
   width: 8px;
-  height: 350px;
+  height: 360px;
   border: solid 1px black;
   border-radius: 12px;
   overflow: visible;
   position: absolute;
-  left: 350px;
+  left: 360px;
   top: 100px;
 }
 
@@ -86,9 +83,9 @@ h3 {
   background-color: transparent;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    position: absolute;
-    top: 70px;
-    left: 270px;
+  position: absolute;
+  top: 70px;
+  left: 270px;
 }
 
 .searchBar {
@@ -101,27 +98,68 @@ h3 {
   height: 20px;
   width: 105px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.addButton{
+
+.addButton {
   height: 30px;
   border: solid 1px black;
   border-radius: 100%;
   background-color: transparent;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    position: absolute;
-    top: 5px;
-    left: 290px;
+  position: absolute;
+  top: 5px;
+  left: 290px;
 }
 
-.recipeButtons{
+.recipeButtons {
   position: relative;
+  cursor: pointer;
   top: 130px;
   padding: 5px;
   margin-left: 30px;
   margin-top: 25px;
   width: 120px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#alfaContainer {
+  background-color: lightgray;
+  width: 360px;
+}
+
+.frontpageIMG {
+  height: 90px;
+  width: 50px;
+
+}
+
+.IMGSize {
+  height: 70px;
+  width: 140px;
+
+}
+
+.card {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.CreateCardMenuHTML{
+  width: 350px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  border: none;
+  cursor: pointer;
+}
+.createButtonMenu{
+  border: none;
+  display: grid;
+  width: 50px;
+  margin-bottom: 10px;
+  position: relative;
+  top: 100px;
+  cursor: pointer;
 }

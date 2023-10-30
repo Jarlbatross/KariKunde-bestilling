@@ -10,7 +10,7 @@ function updateRecipePageView(recipeId) {
     <button onclick="updateAddRecipeView()">Rediger</button>
     <button>Slett</button>
     <h1>${recipe.title}</h1>
-    <img src= ${recipe.image}><br>
+    <img style="height: 200px;" src= ${recipe.image}><br>
     
     
     
@@ -18,7 +18,7 @@ function updateRecipePageView(recipeId) {
     id="portionInput"
     type="number"
     value=${recipe.portionCount}
-    onchange=>${adjustIngredients(recipeId)}
+    onchange=>
     >
 
     

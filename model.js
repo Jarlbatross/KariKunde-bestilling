@@ -49,7 +49,7 @@ const model = {
             {
                 id: 201,
                 title: 'Taco',
-                image: 'img/placeholder.png',
+                image: 'img/taco.jpg',
                 difficulty: [1],
                 timeSpent: [0],
                 instruction: ['Kutt grønnsaker i båter', 'Stek kjøttdeig'],
@@ -62,7 +62,7 @@ const model = {
             {
                 id: 202,
                 title: 'Pasta Carbonara',
-                image: 'img/placeholder.png',
+                image: 'img/PastaCarbonara.jpg',
                 difficulty: [0],
                 timeSpent: [1],
                 instruction: ['Kok pasta', 'Stek bacon og hvitløk', 'Bland egg og ost'],
@@ -75,7 +75,7 @@ const model = {
             {
                 id: 203,
                 title: 'Pad Thai',
-                image: 'img/placeholder.png',
+                image: 'img/PadThai.jpg',
                 difficulty: [2],
                 timeSpent: [2],
                 instruction: ['Legg risnudler i lunkent vann i 5-15 minutter', 'Bland sammen fiskesaus, tamarindsaus, sukker, østerssaus og chilipulver i en liten skål, sett sausen til side.', 'Finhakk rødløk og hvitløk, skjær tofu i terninger og finsnitt vårløk. '],
