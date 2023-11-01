@@ -12,8 +12,6 @@ Oppskriftsiden har bare tallverdier på vanskelighets grad og beregnet tid, hent
 Middelspri:
 Jarl - Få funksjonen som justerer ingrediensantall basert på input av antall porsjoner til å fungere.
 
-Miguel - Slett-knappen på oppskriftsiden må kunne fjerne oppskrifter fra modellen.
-
 Rediger-knappen på oppskriftsiden må kunne hente oppskriften med ID, føre til legg-til-oppskriftsiden og endre verdiene i modellen.
 
 

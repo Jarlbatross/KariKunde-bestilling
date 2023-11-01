@@ -1,6 +1,6 @@
 function updateFrontPageImgView (){
     document.getElementById('app').innerHTML = /*html*/ `
-    <input class="searchBar" placeholder="søk">
+    <input placeholder="søk" class="searchBar">
     <button  class="addButton" onclick="updateAddRecipeView()">+</button>
     <img class="turnonImg" onclick="updateFrontPageListView()" src="img/av_knapp.jpg"> 
     <button class="sortingPageButton" onclick="gotoSortPageView()">Sortering</button>
@@ -20,7 +20,7 @@ function createCardMenuHTML(){
             buttonColor = "rgb(195, 247, 92)";
         } else if (difficulty === 1) {
             buttonColor = "rgb(238, 204, 140)";
-        } else {
+        } else if (difficulty === 2) {
             buttonColor = " rgb(218, 15, 15)";
         }
 

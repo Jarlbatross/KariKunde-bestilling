@@ -1,4 +1,4 @@
-// Her kommer kontrollfunksjonalitet til oppskriftssiden. ¨
+// Her kommer kontrollfunksjonalitet til oppskriftssiden.
 // Det inkluderer hva som skjer når man trykker på knappen, og hva som skjer når man endrer antall porsjoner. 
 
 
@@ -19,7 +19,7 @@ function deleteRecipe() {
 
 // funksjon til å endre ingredient mengde
 function adjustIngredients() {
-    let portionvalue = document.getElementById("portionInput");
+    let portionvalue = document.getElementById("portionInput").value;
     let portionValueAsNum = parseInt(portionvalue);
     const id = model.input.recipePage.recipeID;
     let recipe = getRecipeById(id);

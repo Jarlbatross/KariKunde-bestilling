@@ -20,7 +20,7 @@ function updateSortPageView() {
        
        <input type="checkbox" id="Vegetable" onchange="checkIngredient(this.id)">Grønnsaker
        <input type="checkbox" id="Steak" onchange="checkIngredient(this.id)">Biff
-       <input type="checkbox" id="Suger" onchange="checkIngredient(this.id)">Sukker
+       <input type="checkbox" id="Sugar" onchange="checkIngredient(this.id)">Sukker
       </div>
       <!-- Icontainer end -->
       
@@ -64,4 +64,5 @@ function updateSortPageView() {
     </div>
     <button class="sortButton" onclick="gotoFrontpageView()">Sorter</button>
   `;
+  unchecked()
 }

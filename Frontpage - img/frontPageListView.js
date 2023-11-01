@@ -1,3 +1,5 @@
+
+// oppdaterer
 function updateFrontPageListView() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <button onclick="updateAddRecipeView()" class="addButton">+</button>
@@ -10,65 +12,45 @@ function updateFrontPageListView() {
     `;
 };
 
+
+// denne koden lager en meny i forloop, som henter ut buttons med verdi fra modell.
 function createButtonMenuHTML() {
     let html = '';
-    for(let i = 0; i < model.data.recipes.length; i++){
-        let difficulty = model.data.recipes[i].difficulty[0];
-        let buttonColor = '';
-
-        if (difficulty === 0) {
-            buttonColor = "rgb(195, 247, 92)";
-        } else if (difficulty === 1) {
-            buttonColor = "rgb(238, 204, 140)";
-        } else {
-            buttonColor = " rgb(218, 15, 15)";
-        }
-
-        //html +=   `<button class="recipeButtons"  id="RecipeButtons" onclick="updateRecipePageView(${model.data.recipes[i].id})" style="background-color:${buttonColor}">${model.data.recipes[i].title}</button>
-        //`;
-        
-        if(i % 2 !== 0){
-            html += '<br>';
-        }
-    }
     html += generateRecipes();
     return html;
 };
 
-function generateRecipes(){
+generateRecipes()
+function generateRecipes() {
     let html = "";
     let selectedIngredients = model.input.sortPage.ingredientCheckList.ingredient;
-    let selectedTrueIngredients = Object.keys(selectedIngredients).filter(ingredient => selectedIngredients[ingredient]);
-    console.log(selectedTrueIngredients);
+    let selectedTrueIngredients = Object.keys(model.input.sortPage.ingredientCheckList.ingredient).filter(ingredient => selectedIngredients[ingredient]); //filtrer ut alle ingrediensene som er huket av som true
 
-    model.data.recipes.forEach(recipe => {
+    model.data.recipes.forEach(recipe => { //for hver oppskrift
+        let allIngredientsMatch = true;
 
-        let difficulty = recipe.difficulty[0];
-        let buttonColor = '';
+        for (let i = 0; i < Object.values(selectedTrueIngredients).length; i++) { //for hver ingrediens som er huket av som true
+            if (!recipe.ingredient.includes(Object.values(selectedTrueIngredients)[i].toLowerCase())) {
+                allIngredientsMatch = false;
+                break;
+            }
+        }
 
-        if (difficulty === 0) buttonColor = "rgb(195, 247, 92)";
-        else if (difficulty === 1) buttonColor = "rgb(238, 204, 140)";
-        else buttonColor = " rgb(218, 15, 15)";
+        if (allIngredientsMatch) {
+            let difficulty = recipe.difficulty[0];
+            let buttonColor = '';
 
+            if (difficulty === 0) buttonColor = "rgb(195, 247, 92)";
+            else if (difficulty === 1) buttonColor = "rgb(238, 204, 140)";
+            else if (difficulty === 2) buttonColor = "rgb(218, 15, 15)";
+            
+            html += /*html*/ `
+                <button class="recipeButtons"  id="RecipeButtons" onclick="updateRecipePageView(${recipe.id})" style="background-color:${buttonColor}">${recipe.title}</button>
+            `;
 
-        //let recipeContainsAllSelectedIngredient = selectedTrueIngredients.every(ingredient => recipe.ingredient.includes(ingredient));
-        //console.log(recipe.title + " - " + recipeContainsAllSelectedIngredient)
+            if (model.data.recipes.indexOf(recipe) % 2 !== 0) html += '<br>';
 
-        //recipe.ingredient.forEach(ingredient => {
-        //    //if (!selectedIngredients.includes(ingredient)){
-                
-        //    //}
-        //});
-        Object.values(selectedTrueIngredients).forEach(ingredient =>{
-            console.log(ingredient)
-        })
-
-        //if (recipeContainsAllSelectedIngredient){
-        //    html += /*html*/ `
-        //        <button class="recipeButtons"  id="RecipeButtons" onclick="updateRecipePageView(${recipe.id})" style="background-color:${buttonColor}">${recipe.title}</button>
-        //    `;
-        //}
-        
+        }
     });
     return html;
 }

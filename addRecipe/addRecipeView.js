@@ -1,22 +1,21 @@
-function updateAddRecipeView(){
-    document.getElementById('app').innerHTML = /*html*/ `
-     <button onclick="updateFrontPageImgView()">Tilbake</button>
+function updateAddRecipeView() {
+   document.getElementById('app').innerHTML = /*html*/ `
+     <button onclick="updateFrontPageImgView()" class="backButton">Tilbake</button>
 
-<h1>Legg til oppskrift<h1>
-
-Navn: <input id="NavnInput" type="text" placeholder="Hva heter matretten?"> <br>
-Bilde:<img id="recipeImage"  src=img/placeholder.png>
-<input type="file" id="addrecipeinputImg" style="cursor: pointer;" accept="image/*"  src=img/placeholder.png>
+     <div class="AllContainer">
+<h1>Legg til oppskrift<h1> 
+<input id="NavnInput" type="text" placeholder="Hva heter matretten?"> <br> 
+<img id="addrecipeImg" style="cursor: pointer;"  src="img/placeholder.png" onclick="openImageDialog()">
+<br><input type="file" id="fileInput" style="display: none;" accept="image/*"  src=img/placeholder.png>
    
-
-<div>Vanskelighetsgrad</div>
+<h3>Vanskelighetsgrad</h3>
 <select id="difficultySelect">
-   <option value="easy">Lett</option>
+   <option  value="easy">Lett</option>
    <option value="average">Middels</option>
    <option value="hard">Vanskelig</option>
 </select>
 
-<div>Beregnet tid</div>
+<h3>Beregnet tid</h3>
 <select id="timeSelect">
    <option value="xshort">Under 30 min</option>
    <option value="short"> 30 - 1 time</option>
@@ -24,44 +23,27 @@ Bilde:<img id="recipeImage"  src=img/placeholder.png>
    <option value="long"> 2+ timer</option>
 </select>
 
-<div>Porsjoner</div>
-<input type="number" placeholder="Antall Porsjoner">
+<h3>Porsjoner</h3>
+<input type="number" placeholder="Antall Porsjoner" class="portion">
 
-<h2>Ingredienser</h2>
-<button>+</button>
+<h3>Ingredienser</h3>
+<button class="Matpratknapp">+</button>
 
 <h3>Fremgangsmåte:</h3>
 <input type="text" placeholder="Her blir steget lagt inn" id="textInput">
-<button id="convertButton" onclick="convertTextToDiv()">Legg til steg</button>
-<button>Legg til bilde</button>
+<br>
+<button id="convertButton" onclick="convertTextToDiv()" class="Matpratknapp">Legg til steg</button>
+<button class="Matpratknapp">Legg til bilde</button>
 <div id=outputDiv><div>
-
+<br/>
 <img src=img/placeholder.png>
 
-<br><br><br>
-<button onclick="AddRecipe()">Lagre</button>
+<br><br>
+<button onclick="AddRecipe()" class="saveButton">Lagre</button>
+</div>
     `;
 }
 
 
-
-function AddRecipe(){
-var nyoppskrift = model.input.addRecipePage;
-nyoppskrift.id = Math.floor(Math.random() * 1000);
-nyoppskrift.title = document.getElementById('NavnInput').value; 
-nyoppskrift.image = document.getElementById('addrecipeinputImg').src;
-nyoppskrift.difficulty =
-nyoppskrift.timeSpent =
-nyoppskrift.instruction =
-nyoppskrift.instructionImg =
-nyoppskrift.ingredient =
-nyoppskrift.ingredientCount =
-nyoppskrift.portionIndex = 
-
-
- model.data.recipes.push(nyoppskrift)
- updateFrontPageListView();
-
-}
 
 
