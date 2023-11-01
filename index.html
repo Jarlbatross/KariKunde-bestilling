@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oppskrift-app</title>
+    <link rel="stylesheet" href="style.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oppskrift-app</title>
-  <link rel="stylesheet" href="style.css" />
+    <script src="model.js"></script>
+    <script src="Universal/universal.js"></script>
 
-  <script src="model.js"></script>
-  <script src="Universal/universal.js"></script>
+    <script src="addRecipe/addRecipeController.js"></script>
+    <script src="addRecipe/addRecipeView.js"></script>
 
-  <script src="addRecipe/addRecipeController.js"></script>
-  <script src="addRecipe/addRecipeView.js"></script>
+    <script src="Frontpage - img/frontPageListController.js"></script>
+    <script src="Frontpage - img/frontPageListView.js"></script>
 
-  <script src="Frontpage - img/frontPageListController.js"></script>
-  <script src="Frontpage - img/frontPageListView.js"></script>
+    <script src="Frontpage + img/frontPageIMGController.js"></script>
+    <script src="Frontpage + img/frontPageIMGView.js"></script>
 
-  <script src="Frontpage + img/frontPageIMGController.js"></script>
-  <script src="Frontpage + img/frontPageIMGView.js"></script>
+    <script src="RecipePage/recipeController.js"></script>
+    <script src="RecipePage/recipeView.js"></script>
 
-  <script src="RecipePage/recipeController.js"></script>
-  <script src="RecipePage/recipeView.js"></script>
+    <script src="Sortering/sortPageController.js"></script>
+    <script src="Sortering/sortPageView.js"></script>
+  </head>
 
-  <script src="Sortering/sortPageController.js"></script>
-  <script src="Sortering/sortPageView.js"></script>
-</head>
+  <body>
+    <div id="app"></div>
 
-<body>
-  <div id="app"></div>
-
-  <script>
-    // View
-    model.app.pages = 'frontpage+';
-    updateView();
-    function updateView() {
-      if (model.app.pages == 'frontPage') updateFrontPageListView();
-      else if (model.app.pages == 'frontpage+') updateFrontPageImgView();
-      else if (model.app.pages == 'addRecipe') updateAddRecipeView();
-      else if (model.app.pages == 'sortPage') updateSortPageView();
-      else if (model.app.pages == 'recipePage') updateRecipePageView();
-      // else updateFrontPageView();
-    }
-  </script>
-</body>
-
+    <script>
+      // View
+      model.app.pages = 'frontPage';
+      updateView();
+      function updateView() {
+        if (model.app.pages == 'frontPage') updateFrontPageListView();
+        else if (model.app.pages == 'frontpage+') updateFrontPageImgView();
+        else if (model.app.pages == 'addRecipe') updateAddRecipeView();
+        else if (model.app.pages == 'sortPage') updateSortPageView();
+        else if (model.app.pages == 'recipePage') updateRecipePageView();
+        // else updateFrontPageView();
+      }
+    </script>
+  </body>
 </html>

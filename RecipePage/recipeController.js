@@ -19,11 +19,21 @@ function deleteRecipe() {
 
 // funksjon til å endre ingredient mengde
 function adjustIngredients() {
+    let portionvalue = document.getElementById("portionInput");
+    let portionValueAsNum = parseInt(portionvalue);
     const id = model.input.recipePage.recipeID;
     let recipe = getRecipeById(id);
-    let portionvalue = document.getElementById("portionInput").valueAsNumber;
+   
+    for (let i = 0; i < recipe.ingredientCount.length; i++) {
 
-    recipe.ingredientCount[i] = (recipe.ingredientCount[i] / recipe.portionCount) * portionvalue;
+        console.log(recipe.ingredientCount[i], " this is ingredient count");
+        //dette blir not a number - må bli et tall :(
+        recipe.ingredientCount[i] = (recipe.ingredientCount[i] / recipe.portionCount) * portionValueAsNum;
+       
+        console.log(typeof(recipe.portionCount))
+        console.log(recipe, " this is recipe");
+    }
+
     
     updateRecipePageView()
 };

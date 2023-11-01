@@ -4,7 +4,6 @@ const model = {
     },
 
     input: {
-
         frontPage: {
             listView: false,
             searchField: '', 
@@ -30,17 +29,26 @@ const model = {
 
         sortPage: {
             ingredientCheckList: {
-                ingredient: ['egg','mel','gjær','laks','ris','grønnsaker','biff','melk','sukker'],
-                checkBox: true
-            },
-            timeCheckList: {
-                timeSpent: [0, 1, 2, 3],
-                checkBox: true,
-            },
-            difficultyCheckList: {
-                difficulty: [0, 1, 2],
-                selected: true,
-            }  
+                ingredient: {
+                    egg: false,
+                    mel: false,
+                    gjær: false,
+                    laks: false,
+                    ris: false,
+                    grønnsaker: false,
+                    biff: false,
+                    melk: false,
+                    sukker: false,
+                },
+                },
+                timeCheckList: {
+                    timeSpent: [0, 1, 2, 3],
+                    checkBox: true,
+                },
+                difficultyCheckList: {
+                    difficulty: [0, 1, 2],
+                    selected: true,
+                }  
         }
     },
     // data

@@ -3,5 +3,4 @@ function getRecipeById(id) {
         if (recipe.id == id) return recipe;
     }
     return null;
-        // return getObjectById(id, model.tasks);
-}
+};

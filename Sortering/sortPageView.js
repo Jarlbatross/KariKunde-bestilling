@@ -10,17 +10,17 @@ function updateSortPageView() {
      <!-- Icontainer start -->
      <h3>Ingredienser:</h3>
      <div class="IngredientsContainer">
-       <input type="checkbox" id="Egg">Egg
-       <input type="checkbox" id="Milk">Melk
-       <input type="checkbox" id="Flour">Mel
+       <input type="checkbox" id="Egg" onchange="checkIngredient(this.id)">Egg
+       <input type="checkbox" id="Milk" onchange="checkIngredient(this.id)">Melk
+       <input type="checkbox" id="Flour" onchange="checkIngredient(this.id)">Mel
        
-       <input type="checkbox" id="Yeast">Gjær
-       <input type="checkbox" id="Salmon">Laks
-       <input type="checkbox" id="Rice">Ris
+       <input type="checkbox" id="Yeast" onchange="checkIngredient(this.id)">Gjær
+       <input type="checkbox" id="Salmon" onchange="checkIngredient(this.id)">Laks
+       <input type="checkbox" id="Rice" onchange="checkIngredient(this.id)">Ris
        
-       <input type="checkbox" id="Vegetable">Grønnsaker
-       <input type="checkbox" id="Steak">Biff
-       <input type="checkbox" id="Suger">Sukker
+       <input type="checkbox" id="Vegetable" onchange="checkIngredient(this.id)">Grønnsaker
+       <input type="checkbox" id="Steak" onchange="checkIngredient(this.id)">Biff
+       <input type="checkbox" id="Suger" onchange="checkIngredient(this.id)">Sukker
       </div>
       <!-- Icontainer end -->
       
@@ -62,9 +62,6 @@ function updateSortPageView() {
       
       
     </div>
-      <button class="sortButton" onclick="gotoFrontpageView()">Sorter</button>
-      `;
-
-      
+    <button class="sortButton" onclick="gotoFrontpageView()">Sorter</button>
+  `;
 }
-

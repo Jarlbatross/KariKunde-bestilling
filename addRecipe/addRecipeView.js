@@ -4,8 +4,9 @@ function updateAddRecipeView(){
 
 <h1>Legg til oppskrift<h1>
 
-Navn: <input type="text" placeholder="Hva heter matretten?"> <br>
-Bilde:<img src=placeholder.png> <br>
+Navn: <input id="NavnInput" type="text" placeholder="Hva heter matretten?"> <br>
+Bilde:<img id="recipeImage"  src=img/placeholder.png>
+<input type="file" id="addrecipeinputImg" style="cursor: pointer;" accept="image/*"  src=img/placeholder.png>
    
 
 <div>Vanskelighetsgrad</div>
@@ -35,9 +36,32 @@ Bilde:<img src=placeholder.png> <br>
 <button>Legg til bilde</button>
 <div id=outputDiv><div>
 
-<img src=placeholder.png>
+<img src=img/placeholder.png>
 
 <br><br><br>
-<button>Lagre</button>
+<button onclick="AddRecipe()">Lagre</button>
     `;
 }
+
+
+
+function AddRecipe(){
+var nyoppskrift = model.input.addRecipePage;
+nyoppskrift.id = Math.floor(Math.random() * 1000);
+nyoppskrift.title = document.getElementById('NavnInput').value; 
+nyoppskrift.image = document.getElementById('addrecipeinputImg').src;
+nyoppskrift.difficulty =
+nyoppskrift.timeSpent =
+nyoppskrift.instruction =
+nyoppskrift.instructionImg =
+nyoppskrift.ingredient =
+nyoppskrift.ingredientCount =
+nyoppskrift.portionIndex = 
+
+
+ model.data.recipes.push(nyoppskrift)
+ updateFrontPageListView();
+
+}
+
+
