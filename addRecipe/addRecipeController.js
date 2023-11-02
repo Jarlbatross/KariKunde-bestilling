@@ -13,7 +13,11 @@ function convertTextToDiv() {
 
 // funksjon for å  oppdaterer bildet automatisk etter bilde fil er valgt. 
 function openImageDialog() {
+  //variabel so mer deklarert til <img> tag i recipeView
   var imageInput = document.getElementById('addrecipeImg');
+  /* en add eventlistner som  hører etter om et bilde er valgt 
+  og deretter viser det frem i img tag i addrecipe
+  */
   fileInput.addEventListener('change', function () {
      if (fileInput.files.length > 0) {
         var selectedImage = fileInput.files[0];
@@ -33,15 +37,21 @@ function openImageDialog() {
 
 
 function AddRecipe() {
+  /* gir verdi fra model.input.addrecipe til variabel nyoppskrift som da blir et eget array
+   og lager en egen oppskrift for seg selv*/
   var nyoppskrift = Object.assign({}, model.input.addRecipePage);
-
+ /* ny oppskrift array sin id i henhold til model.input.addrecipe.id blir gitt en random id mellom 0-1000 */
   nyoppskrift.id = Math.floor(Math.random() * 1000);
+  // når du skriver inn i input felt i addrecipe så legger den det du skriver inn i array sin title
   nyoppskrift.title = document.getElementById('NavnInput').value;
 
+  // difficultySelect er id til select feltet i addrecipeview
   var difficultySelect = document.getElementById('difficultySelect');
+  // variabel selectedDifficulty som deklarerer value easy,avarage og hard på addrecipeview
   var selectedDifficulty = difficultySelect.value;
   var difficultyIndex;
-
+/* og her sier vi da at vis selecteddifficulty er value easy 
+så skal difficulty index være 0 som da er i følge modell den fargen som er gitt den indeksen*/
   if (selectedDifficulty === 'easy') {
       difficultyIndex = 0;
   } else if (selectedDifficulty === 'average') {
@@ -69,5 +79,7 @@ function AddRecipe() {
 
   model.data.recipes.push(nyoppskrift);
   updateFrontPageListView();
+  
 }
 
+// rediger knappen på recipepage skal  til den valgte oppskriften i addrecipepage og kunne redigeres

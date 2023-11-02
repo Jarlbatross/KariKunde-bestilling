@@ -21,53 +21,30 @@ function deleteRecipe() {
 function adjustIngredients() {
     let portionvalue = document.getElementById("portionInput").value;
     let portionValueAsNum = parseInt(portionvalue);
-    const id = model.input.recipePage.recipeID;
-    let recipe = getRecipeById(id);
-   
-    for (let i = 0; i < recipe.ingredientCount.length; i++) {
+    const recipeId = model.input.recipePage.recipeID;
+    let recipe = getRecipeById(recipeId);
 
+    for (let i = 0; i < recipe.ingredientCount.length; i++) {
         console.log(recipe.ingredientCount[i], " this is ingredient count");
-        //dette blir not a number - må bli et tall :(
         recipe.ingredientCount[i] = (recipe.ingredientCount[i] / recipe.portionCount) * portionValueAsNum;
-       
-        console.log(typeof(recipe.portionCount))
+        console.log(typeof(recipe.portionCount));
         console.log(recipe, " this is recipe");
     }
 
-    
-    updateRecipePageView()
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    updateRecipePageView(recipeId);
+}
 
 
 function updatePortionCount(recipeId, newPortionCount) {
     // Oppdater oppskriften i modellen med det nye porsjonsantallet
 
 const recipe = getRecipeById(recipeId);
-recipe.ingredientCount = newIngredientCount
-    recipe.portionCount = newPortionCount;
+const ingredientCount = recipe.ingredientCount;
 
+for(i = 0; i < ingredientCount.length; i++){
+    ingredientCount[i] = (ingredientCount[i] * recipe.portionCount) * newPortionCount;
+}
+recipe.portionCount = newPortionCount;
     // Kall funksjonen igjen for å oppdatere visningen
     updateRecipePageView(recipeId);
 }

@@ -65,7 +65,7 @@ const model = {
                 ingredient: ['løk', 'mel', 'vann'],
                 ingredientCount: [2, 400, 0.8],
                 ingredientUnit: ['stk', 'g', 'l'],
-                portionCount: 2,
+                portionCount: 1,
             },
             {
                 id: 202,
@@ -78,7 +78,7 @@ const model = {
                 ingredient: ['pasta', 'bacon', 'egg', 'parmesanost'],
                 ingredientCount: [200, 100, 2, 50],
                 ingredientUnit: ['g', 'g', 'stk', 'g'],
-                portionCount: 4,
+                portionCount: 1,
             },
             {
                 id: 203,
@@ -91,7 +91,7 @@ const model = {
                 ingredient: ['risnudler', 'fiskesaus (asiatisk)', 'tamarindsaus', 'sukker'],
                 ingredientCount: [200, 2, 2, 1],
                 ingredientUnit: ['g', 'ss', 'ss', 'ss'],
-                portionCount: 2,
+                portionCount: 1,
             },
         ]
     },
