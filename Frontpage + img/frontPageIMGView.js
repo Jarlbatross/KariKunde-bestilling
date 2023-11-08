@@ -1,6 +1,10 @@
-function updateFrontPageImgView (){
+
+function updateFrontPageImgView() {
     document.getElementById('app').innerHTML = /*html*/ `
-    <input placeholder="søk" class="searchBar">
+    
+    <div>${createInputHTML()}</div>
+    <button onclick="searchForRecipes()">Søk</button>
+
     <button  class="addButton" onclick="updateAddRecipeView()">+</button>
     <img class="turnonImg" onclick="updateFrontPageListView()" src="img/av_knapp.jpg"> 
     <button class="sortingPageButton" onclick="gotoSortPageView()">Sortering</button>
@@ -10,20 +14,36 @@ function updateFrontPageImgView (){
     `;
 }
 
-function createCardMenuHTML(){
+
+function createInputHTML() {
+    let html = ''
+
+    html += /*html*/`
+        <input
+    placeholder="Søk"
+    class="searchBar"
+    id = "mySearch"
+    value = ''>
+    `
+
+    return html;
+}
+
+
+function createCardMenuHTML() {
+    
     let html = '';
     for(let i = 0; i < model.data.recipes.length; i++){
-        let difficulty = model.data.recipes[i].difficulty[0];
+        let difficulty = model.data.recipes[i].difficulty;
         let buttonColor = '';
 
-        if (difficulty === 0) {
+        if (difficulty === "easy") {
             buttonColor = "rgb(195, 247, 92)";
-        } else if (difficulty === 1) {
+        } else if (difficulty === 'average') {
             buttonColor = "rgb(238, 204, 140)";
-        } else if (difficulty === 2) {
+        } else if (difficulty === 'difficult') {
             buttonColor = " rgb(218, 15, 15)";
         }
-
         html += /*HTML*/ ` 
         <div class="createButtonMenu">
         <img class="IMGSize" src="${model.data.recipes[i].image}">
@@ -31,9 +51,11 @@ function createCardMenuHTML(){
        </div>
         `;
 
-    }
+    };
     return html;
-}
+};
+
+
 
 
 

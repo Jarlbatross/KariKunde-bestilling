@@ -23,6 +23,9 @@
 
     <script src="Sortering/sortPageController.js"></script>
     <script src="Sortering/sortPageView.js"></script>
+
+    <!-- <script src="editRecipe/editRecipeController.js"></script>
+    <script src="editRecipe/editRecipeView.js"></script> -->
   </head>
 
   <body>
@@ -38,6 +41,8 @@
         else if (model.app.pages == 'addRecipe') updateAddRecipeView();
         else if (model.app.pages == 'sortPage') updateSortPageView();
         else if (model.app.pages == 'recipePage') updateRecipePageView();
+        else if (model.app.pages == 'editRecipePage')
+          updateEditRecipePageView();
         // else updateFrontPageView();
       }
     </script>

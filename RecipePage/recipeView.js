@@ -7,7 +7,7 @@ function updateRecipePageView(recipeId) {
 
     document.getElementById('app').innerHTML = /*html*/ `
     <button onclick="gotoFrontpageView()">Tilbake</button>
-    <button onclick="updateAddRecipeView()">Rediger</button>
+    <button onclick="gotoEditRecipeView()">Rediger</button>
     <button onclick="deleteThisRecipe()">Slett</button>
     <h1>${recipe.title}</h1>
     <img style="height: 200px;" src= ${recipe.image}><br>
@@ -36,12 +36,17 @@ function createIngredientHTML() {
     let html = '';
     const id = model.input.recipePage.recipeID;
     let recipe = getRecipeById(id)
-    for (let i = 0; i < recipe.ingredient.length; i++) {
-        html += /*html*/`
+    if(recipe && recipe.ingredient && recipe.ingredientCount && recipe.ingredientUnit){
+
+        for (let i = 0; i < recipe.ingredient.length; i++) {
+            html += /*html*/`
             <ul>${recipe.ingredientCount[i]}${recipe.ingredientUnit[i]} ${recipe.ingredient[i]}</ul>
-        `
+            `;
+        }
+    }else {
+        html = "ingen tilgjengelige ingredienser";
     }
-    return html;
+        return html;
 }
 
 function createInstructionHTML() {
@@ -100,20 +105,6 @@ function createTimeSpentHTML() {
     return html;
     }
 
-// function deleteThisRecipe() {
-//     const recipeId = model.input.recipePage.recipeID;
-//     const recipes = model.recipes;
-//     const recipeIndex = recipes.findIndex(recipe => recipe.id === recipeId);
-//     if (recipeIndex !== -1) {
-//         recipes.splice(recipeIndex, 1);
-//         gotoFrontpageView();
-//     } else {
-//         alert('Recipe not found.');
-//     }
 
-// } .findIndex() innebygd metode --- returnerer -1 om den ikke kan hente ut noe/kjører ikke funksjon om array er tom --- endrer ingenting i element som blir lest
-// --- .splice() 
-// --- kode skrevet slik at det ikke fjerner viewet, men heller går tilbake til frontpage 
-// --- satt opp en alert (husk å spørre kunden om delete confirmation før det blir faktisk slettet?)
 
 

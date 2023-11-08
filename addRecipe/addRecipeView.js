@@ -27,8 +27,11 @@ function updateAddRecipeView() {
 <input type="number" placeholder="Antall Porsjoner" class="portion">
 
 <h3>Ingredienser</h3>
-<button class="Matpratknapp">+</button>
-
+<div id="ingredientFieldContainer">
+<button onclick="addInputFields()" class="Matpratknapp">+</button>
+   <div id="ingredientInput"></div>
+<div>
+   
 <h3>Fremgangsmåte:</h3>
 <input type="text" placeholder="Her blir steget lagt inn" id="textInput">
 <br>

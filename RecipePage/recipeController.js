@@ -2,19 +2,22 @@
 // Det inkluderer hva som skjer når man trykker på knappen, og hva som skjer når man endrer antall porsjoner. 
 
 
-function gotoRecipeView(){
-    model.app.pages = 'recipePage';
-    updateView();
-}
+ function deleteThisRecipe() {
+     const recipeId = model.input.recipePage.recipeID;
+     const recipes = model.recipes;
+     const recipeIndex = recipes.findIndex(recipe => recipe.id === recipeId);
+     if (recipeIndex !== -1) {
+         recipes.splice(recipeIndex, 1);
+         gotoFrontpageView();
+     } else {
+        alert('Recipe not found.');
+     }
+    }
 
-function gotoFrontpageView(){
-    model.app.pages = 'frontPage';
-    updateView();
-}
-
-function deleteRecipe() {
-    
-}
+// } .findIndex() innebygd metode --- returnerer -1 om den ikke kan hente ut noe/kjører ikke funksjon om array er tom --- endrer ingenting i element som blir lest
+// --- .splice() 
+// --- kode skrevet slik at det ikke fjerner viewet, men heller går tilbake til frontpage 
+// --- satt opp en alert (husk å spørre kunden om delete confirmation før det blir faktisk slettet?)
 
 
 // funksjon til å endre ingredient mengde
@@ -58,3 +61,7 @@ I tillegg har vi lagt til en onchange-hendelse på porsjonsinndata slik at du ka
  Her er en ny funksjon for å oppdatere porsjonsantallet: */
 
  // ${adjustIngredients()} sett denne tilbake i inputs onchange i recipeview når den er klar til å brukes.
+
+//  function updateAddRecipeView() {
+
+//  }
