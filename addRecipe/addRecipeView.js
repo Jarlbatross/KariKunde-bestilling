@@ -11,8 +11,8 @@ function updateAddRecipeView() {
 <h3>Vanskelighetsgrad</h3>
 <select id="difficultySelect">
    <option  value="easy">Lett</option>
-   <option value="average">Middels</option>
-   <option value="hard">Vanskelig</option>
+   <option  value="average">Middels</option>
+   <option  value="hard">Vanskelig</option>
 </select>
 
 <h3>Beregnet tid</h3>
@@ -24,7 +24,21 @@ function updateAddRecipeView() {
 </select>
 
 <h3>Porsjoner</h3>
-<input type="number" placeholder="Antall Porsjoner" class="portion">
+<input id="PortionValue" type="number" placeholder="Antall Porsjoner" class="portion">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h3>Ingredienser</h3>
 <div id="ingredientFieldContainer">

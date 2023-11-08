@@ -1,8 +1,7 @@
 // - lagre allerede valgte vanskelighetsgrad/beregnet tid 
-// - merge view og controller filer på edit/add QUESTIONMARK???
 // - funskjoner som er inne på HTML -- openImageDialog addInputFields  convertTextToDiv updateRecipe A U D I T 
-// no ragebaby pls NB!!
-function updateEditRecipePageView() {
+// UNDER CONSTRUCTION UNLUCKY
+function updateEditRecipePageView(recipeId) {
    model.input.recipePage.recipeID = recipeId;
    let recipe = getRecipeById(recipeId);
 
@@ -47,7 +46,7 @@ function updateEditRecipePageView() {
 <button class="Matpratknapp">Legg til bilde</button>
 <div id=outputDiv><div>
 <br/>
-<img src=img/placeholder.png>
+<img src="${recipe.image}">
 
 <br><br>
 <button onclick="updateRecipe()" class="saveButton">Lagre</button>

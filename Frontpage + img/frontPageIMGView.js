@@ -3,16 +3,16 @@ function updateFrontPageImgView() {
     document.getElementById('app').innerHTML = /*html*/ `
     
     <div>${createInputHTML()}</div>
-    <button onclick="searchForRecipes()">Søk</button>
 
     <button  class="addButton" onclick="updateAddRecipeView()">+</button>
     <img class="turnonImg" onclick="updateFrontPageListView()" src="img/av_knapp.jpg"> 
     <button class="sortingPageButton" onclick="gotoSortPageView()">Sortering</button>
 
-    <div class="CreateCardMenuHTML">${createCardMenuHTML()}</div>
+    <div id="cardHTML" class="CreateCardMenuHTML">${createCardMenuHTML()}</div>
     <div class="scrollbar"></div>
     `;
 }
+
 
 
 function createInputHTML() {
@@ -22,8 +22,10 @@ function createInputHTML() {
         <input
     placeholder="Søk"
     class="searchBar"
+    type = "text"
     id = "mySearch"
-    value = ''>
+    value = ''
+    onkeyup = "searchForRecipe()">
     `
 
     return html;
@@ -37,7 +39,7 @@ function createCardMenuHTML() {
         let difficulty = model.data.recipes[i].difficulty;
         let buttonColor = '';
 
-        if (difficulty === "easy") {
+        if (difficulty === 'easy') {
             buttonColor = "rgb(195, 247, 92)";
         } else if (difficulty === 'average') {
             buttonColor = "rgb(238, 204, 140)";

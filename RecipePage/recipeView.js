@@ -37,14 +37,11 @@ function createIngredientHTML() {
     const id = model.input.recipePage.recipeID;
     let recipe = getRecipeById(id)
     if(recipe && recipe.ingredient && recipe.ingredientCount && recipe.ingredientUnit){
-
         for (let i = 0; i < recipe.ingredient.length; i++) {
             html += /*html*/`
             <ul>${recipe.ingredientCount[i]}${recipe.ingredientUnit[i]} ${recipe.ingredient[i]}</ul>
             `;
         }
-    }else {
-        html = "ingen tilgjengelige ingredienser";
     }
         return html;
 }
@@ -65,11 +62,11 @@ function createDifficultyHTML() {
     let html = '';
     const id = model.input.recipePage.recipeID;
     let recipe = getRecipeById(id);
-    if (recipe.difficulty == 0) {
+    if (recipe.difficulty === "easy") {
         html += /*html*/`
         Lett
     `}
-    else if (recipe.difficulty == 1) {
+    else if (recipe.difficulty === "average") {
         html += /*html*/`
     Middels
 `}

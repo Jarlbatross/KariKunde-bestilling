@@ -1,4 +1,7 @@
 Høypri:
+
+Husk å legge inn onkeyup på sortering uten bilder. 
+
 Didrik(selected) - Legg til oppskrift-siden. Lagre-knappen må pushe nye oppskrifter inn i modellen. 
 
 Ferdig-Karl Didrik + Ingrid - Ingrediensknappen på legg til oppskrift-siden gjør ingenting foreløpig. Må kunne legge til antall, benevning og type ingrediens. 
